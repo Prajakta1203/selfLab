@@ -1,0 +1,24 @@
+<!-- <p>view-students works!</p> -->
+ <input type="text" (input)="searchValue($event)" placeholder="Enter id || name">
+ <table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Password</th>
+        <th>Mobile No</th>
+        <th>Email</th>
+        <th>DateOfBirth</th>
+        <th colspan="3">Action</th>
+    </tr>
+    <tr *ngFor="let s of finaldata$ | async">
+        <td>{{s.id}}</td>
+        <td>{{s.studentname}}</td>
+        <td>{{s.password}}</td>
+        <td>{{s.mobile}}</td>
+        <td>{{s.email}}</td>
+        <td>{{s.dateofbirth}}</td>
+        <td><a  routerLink="/viewById/{{s.id}}">View</a></td>
+        <td><a routerLink="/viewStudent/{{s.id}}">Delete</a></td>
+        <td><a routerLink="/addStudent/{{s.id}}">Update</a></td>
+    </tr>
+ </table>

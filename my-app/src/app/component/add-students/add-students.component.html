@@ -1,0 +1,143 @@
+<!-- <p>add-students works!</p> -->
+ <h2>Student Registration</h2>
+ <hr>
+<form [formGroup]="formG" (ngSubmit)="addInfo()">
+
+    <div>
+        <label for="Name">Name:</label>
+        <input type="text" formControlName="studentname" required>
+        <div *ngIf="formG.get('studentname')?.['invalid'] && (formG.get('studentname')?.['dirty'] || formG.get('studentname')?.['touched'])">
+
+            <small *ngIf="formG.get('studentname')?.errors?.['required']">
+                Name required.
+            </small>
+            <small *ngIf="formG.get('studentname')?.errors?.['minlength']">
+                Min Value is 3.
+            </small>
+            <small *ngIf="formG.get('studentname')?.errors?.['maxlength']">
+                Max Value is 20
+            </small>
+            <small *ngIf="formG.get('studentname')?.errors?.['duplicatevalue']">
+                value alraedy exists.
+            </small>
+
+        </div>
+    </div>
+
+    <div>
+        <label for="Password">Password:</label>
+        <input type="password" formControlName="password" required>
+        <div *ngIf="formG.get('password')?.['invalid'] && (formG.get('password')?.['dirty'] || formG.get('password')?.['touched'])">
+
+            <small *ngIf="formG.get('password')?.errors?.['required']">
+                Password required
+            </small>
+            <small *ngIf="formG.get('password')?.errors?.['pattern']">
+                Password pattern is wrong.
+            </small>
+
+        </div>
+    </div>
+
+    <div>
+        <label for="Mobile No">Mobile No:</label>
+        <input type="number" formControlName="mobile" required>
+        <div *ngIf="formG.get('mobile')?.['invalid'] && (formG.get('mobile')?.['dirty'] || formG.get('mobile')?.['touched'])">
+
+            <small *ngIf="formG.get('mobile')?.errors?.['required']">
+                Mobile No required
+            </small>
+            <small *ngIf="formG.get('mobile')?.errors?.['pattern']">
+                Mobile No pattern is wrong.
+            </small>
+
+        </div>
+    </div>
+
+    <div>
+        <label for="Eamil">Email:</label>
+        <input type="text" formControlName="email" required>
+        <div *ngIf="formG.get('email')?.['invalid'] && (formG.get('email')?.['dirty'] || formG.get('email')?.['touched'])">
+
+            <small *ngIf="formG.get('email')?.errors?.['required']">
+                Email required
+            </small>
+            <small *ngIf="formG.get('email')?.errors?.['email']">
+                Email pattern is wrong.
+            </small>
+
+        </div>
+    </div>
+
+    <div>
+        <label for="Date">Date:</label>
+        <input type="text" formControlName="dateofbirth" required>
+        <div *ngIf="formG.get('dateofbirth')?.['invalid'] && (formG.get('dateofbirth')?.['dirty'] || formG.get('dateofbirth')?.['touched'])">
+
+            <small *ngIf="formG.get('dateofbirth')?.errors?.['required']">
+                Date of brith required
+            </small>
+            <small *ngIf="formG.get('dateofbirth')?.errors?.['retVal']">
+                Date of brith format is wrong
+            </small>
+
+        </div>
+    </div>
+
+    <div>
+        <label for="Salary">Salary:</label>
+        <input type="text" formControlName="salary" required>
+        <div *ngIf="formG.get('salary')?.['invalid'] && (formG.get('salary')?.['dirty'] || formG.get('salary')?.['touched'])">
+
+            <small *ngIf="formG.get('salary')?.errors?.['required']">
+                salary is required
+            </small>
+            <small *ngIf="formG.get('salary')?.errors?.['positive']">
+                salary required to be positive.
+            </small>
+
+        </div>
+    </div>
+
+    <div>
+        <label for="From">From:</label>
+        <input type="text" formControlName="from" required>
+        <div *ngIf="formG.get('from')?.['invalid'] && (formG.get('from')?.['dirty'] || formG.get('from')?.['touched'])">
+
+            <small *ngIf="formG.get('from')?.errors?.['required']">
+                Date is required
+            </small>
+            <small *ngIf="formG.get('to')?.errors?.['retVal']">
+                Date is not Valid
+            </small>
+            <!-- <small *ngIf="formG.get('from')?.errors?.['dateRangeInvalid']">
+                Date range not valid
+            </small> -->
+
+        </div>
+    </div>
+
+    <div>
+        <label for="To">To:</label>
+        <input type="text" formControlName="to" required>
+        <div *ngIf="formG.get('to')?.['invalid'] && (formG.get('to')?.['dirty'] || formG.get('to')?.['touched'])">
+
+            <small *ngIf="formG.get('to')?.errors?.['required']">
+                Date is required
+            </small>
+            <small *ngIf="formG.get('to')?.errors?.['retVal']">
+                Date is not valid
+            </small>
+            <!-- <small *ngIf="formG.get('to')?.errors?.['dateRangeInvalid']">
+                Date range not valid
+            </small> -->
+
+        </div>
+    </div>
+    <div *ngIf="formG.errors?.['dateRangeInvalid'] && (formG.get('from')?.['touched'] || formG.get('to')?.['touched'])">
+        date range is invalid
+    </div>
+
+    <input type="submit" [disabled]="formG.invalid" />
+
+</form>

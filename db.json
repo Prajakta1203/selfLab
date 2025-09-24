@@ -1,0 +1,48 @@
+{
+  "studentData": [
+    {
+      "studentname": "Prajakta",
+      "password": "Pragi@123",
+      "mobile": 9325725342,
+      "email": "prajaktaghyar@gmail.com",
+      "dateofbirth": "2003-12-02",
+      "from": "2000-12-02",
+      "to": "2001-12-02",
+      "salary": "50000",
+      "id": "d841"
+    },
+    {
+      "id": "6880",
+      "studentname": "Prajakta Shrikrishna",
+      "password": "Praju@132",
+      "mobile": 9325725342,
+      "email": "pg@gmail.com",
+      "dateofbirth": "2003-12-02",
+      "from": "2000-23-12",
+      "to": "2003-12-03",
+      "salary": "50000"
+    },
+    {
+      "studentname": "Prajakta Shrikrishna",
+      "password": "Pragi@123",
+      "mobile": 9156022457,
+      "email": "prajaktaghyar@gmail.com",
+      "dateofbirth": "2003-12-02",
+      "from": "2000-23-12",
+      "to": "2003-12-03",
+      "salary": "60000",
+      "id": "8ebe"
+    },
+    {
+      "studentname": "ayshi",
+      "password": "Praju@132",
+      "mobile": 9325725342,
+      "email": "pg@gmail.com",
+      "dateofbirth": "2003-12-02",
+      "from": "2000-23-12",
+      "to": "2003-12-03",
+      "salary": "50000",
+      "id": "e126"
+    }
+  ]
+}
